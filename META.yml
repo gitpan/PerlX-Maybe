@@ -1,0 +1,33 @@
+---
+abstract: 'return a given list only if they are all defined'
+author:
+  - 'Toby Inkster <tobyink@cpan.org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Test::More: 0.61
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 1.02'
+keywords: []
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+module_name: PerlX::Maybe
+name: PerlX-Maybe
+no_index:
+  directory:
+    - inc
+    - t
+    - xt
+requires:
+  Exporter: 0
+  perl: 5.8.0
+  strict: 0
+resources:
+  bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=PerlX-Maybe
+  homepage: https://metacpan.org/release/PerlX-Maybe
+  license: http://dev.perl.org/licenses/
+  repository: https://bitbucket.org/tobyink/p5-perlx-maybe
+version: 0.001
