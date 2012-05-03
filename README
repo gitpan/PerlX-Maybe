@@ -43,6 +43,13 @@ DESCRIPTION
         defined $age ? (age => $age) : (),
         );
 
+    or:
+
+     my $bob = Person->new(
+        (name => $name) x!!(defined $name),
+        (age  => $age)  x!!(defined $age),
+        );
+
     A slightly more elegant solution is the "maybe" function:
 
   "maybe $x => $y, @rest"

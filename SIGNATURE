@@ -14,12 +14,12 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 d5ddca28c0969de9807bb86b98f8be3a6b02423c Changes
+SHA1 92ef62c0de13e8545a0d31f10406025371aa50ba Changes
 SHA1 1d54db0b8134eb1c8ea0cee400f9dc612bcaa61a LICENSE
 SHA1 cf87de9185eb4d8409344c716b72930449430a1d MANIFEST
-SHA1 3eb119326a91850b222f8cba76c6ede9c898cec8 META.yml
+SHA1 9b5306cfd14416ef353fb8a78154b453cb3f008e META.yml
 SHA1 7150e5e086ef493e1e527a1eeec44a8344b80db6 Makefile.PL
-SHA1 dc03384ee2b2045c4d45a374c48d39cc7d9f005c README
+SHA1 da978d574620c957831376dbe75cd0a699b983d8 README
 SHA1 5d94bc10deff1dd74e4bc5dfa6fc015e39271f15 inc/Module/AutoInstall.pm
 SHA1 40106479d4e07f379cb82ca1d69fca92e3a40f47 inc/Module/Install.pm
 SHA1 34a24a530ecf0365cc02e4150b06c9bed702a441 inc/Module/Install/AutoInstall.pm
@@ -36,12 +36,12 @@ SHA1 1326052d1df1065debee74f9d8583a734b9b3d00 inc/Module/Install/Win32.pm
 SHA1 bb607f3715c40fc3bc1c46496587cdb215bc4fa2 inc/Module/Install/WriteAll.pm
 SHA1 26d58a041cd6b3d21db98b32e8fd1841aae21204 inc/Module/Package.pm
 SHA1 6b807287940754cc31a3db59f2b22e363d5525be inc/Module/Package/Dist/RDF.pm
-SHA1 775bd24f2fdbb6dce51a8b5b0cdb01fccfce83c4 inc/Scalar/Util.pm
-SHA1 b1b664983568bf822c327599eb88e223483ae96a inc/Scalar/Util/PP.pm
+SHA1 e31c281782183601e1e057c5914f63269e043932 inc/Scalar/Util.pm
+SHA1 5eae2f71c45a996a296d2445b18d0589307111f0 inc/Scalar/Util/PP.pm
 SHA1 eef6bff62046bff2ce08ba132d0b58fba30f40b4 inc/YAML/Tiny.pm
-SHA1 af8cdb4fa27ca925a2a50b168c54cf090c318512 lib/PerlX/Maybe.pm
-SHA1 2f135d60a1ced190c2b96e62ad5ef3a33a6e7c37 lib/Syntax/Feature/Maybe.pm
-SHA1 48fc9f8f1f9327b082ef1a89bd99464e5f6ff68c meta/changes.ttl
+SHA1 03d73a6ec001330a0caafeef4e1aa5b2c013d934 lib/PerlX/Maybe.pm
+SHA1 dbab1703220f624dec03528977fe5ccb76e708a7 lib/Syntax/Feature/Maybe.pm
+SHA1 ad2bfe18cd3501353c1bc805692549dc31507d3c meta/changes.ttl
 SHA1 4615287be6141b45a1f5466d1316f0ee77f89fd0 meta/doap.ttl
 SHA1 21b1360a6a156c4deafd2eab8a4e8b686af8b310 meta/makefile.ttl
 SHA1 0eda281cd41c7bfa28293ff92f8599deb2f9e288 t/01basic.t
@@ -49,7 +49,7 @@ SHA1 3079896117a38ecef4125ac9756cb2d665434bea t/02maybe.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iEYEARECAAYFAk875o0ACgkQzr+BKGoqfTkBLgCeNNWuesVGDAhvDZx7CxXgFxGs
-iIIAmgKDVxjIsC8MCC8HJEoHAJz/MvFo
-=fR9A
+iEYEARECAAYFAk+iR1oACgkQzr+BKGoqfTlp1wCdGZ9q8phvamW03KjFUPtm2dtD
+CEMAoJixIRK0Y0ebLz4YLYIxM5TtrPx4
+=oOf5
 -----END PGP SIGNATURE-----
