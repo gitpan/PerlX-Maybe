@@ -7,14 +7,14 @@ SYNOPSIS
      my $bob = Person->new(
         defined $name ? (name => $name) : (),
         defined $age ? (age => $age) : (),
-        );
+     );
 
     Now you can write:
 
      my $bob = Person->new(
         maybe name => $name,
         maybe age  => $age,
-        );
+     );
 
 DESCRIPTION
     Moose classes (and some other classes) distinguish between an attribute
@@ -24,7 +24,7 @@ DESCRIPTION
      my $bob = Person->new(
         name => $name,
         age => $age,
-        );
+     );
 
     Will result in the "name" and "age" attributes possibly being set to
     undef (if the corresponding $name and $age variables are not defined),
@@ -41,43 +41,69 @@ DESCRIPTION
      my $bob = Person->new(
         defined $name ? (name => $name) : (),
         defined $age ? (age => $age) : (),
-        );
+     );
 
     or:
 
      my $bob = Person->new(
         (name => $name) x!!(defined $name),
         (age  => $age)  x!!(defined $age),
-        );
+     );
 
-    A slightly more elegant solution is the "maybe" function:
+    A slightly more elegant solution is the "maybe" function.
 
-  "maybe $x => $y, @rest"
-    This function checks that $x and $y are both defined. If they are, it
-    returns them both as a list; otherwise it returns the empty list.
+  Functions
+    "maybe $x => $y, @rest"
+        This function checks that $x and $y are both defined. If they are,
+        it returns them both as a list; otherwise it returns the empty list.
 
-    If @rest is provided, it is unconditionally appended to the end of
-    whatever list is returned.
+        If @rest is provided, it is unconditionally appended to the end of
+        whatever list is returned.
 
-    The combination of these behaviours allows the following very sugary
-    syntax to "just work".
+        The combination of these behaviours allows the following very sugary
+        syntax to "just work".
 
-     my $bob = Person->new(
-             name      => $name,
-             address   => $addr,
-       maybe phone     => $tel,
-       maybe email     => $email,
-             unique_id => $id,
-       );
+         my $bob = Person->new(
+                 name      => $name,
+                 address   => $addr,
+           maybe phone     => $tel,
+           maybe email     => $email,
+                 unique_id => $id,
+         );
 
-    This function is exported by default.
+        This function is exported by default.
+
+    "provided $condition, $x => $y, @rest"
+        Like "maybe" but allows you to use a custom condition expression:
+
+         my $bob = Person->new(
+                                     name      => $name,
+                                     address   => $addr,
+           provided length($tel),    phone     => $tel,
+           provided $email =~ /\@/,  email     => $email,
+                                     unique_id => $id,
+         );
+
+        This function is not exported by default.
+
+    "PerlX::Maybe::IMPLEMENTATION"
+        Indicates whether the XS backend PerlX::Maybe::XS was loaded.
+
+  XS Backend
+    If you install PerlX::Maybe::XS, a faster XS-based implementation will
+    be used instead of the pure Perl functions. My basic benchmarking
+    experiments seem to show this to be around 30% faster.
+
+  Environment
+    The environment variable "PERLX_MAYBE_IMPLEMENTATION" may be set to "PP"
+    to prevent the XS backend from loading.
 
 BUGS
     Please report any bugs to
     <http://rt.cpan.org/Dist/Display.html?Queue=PerlX-Maybe>.
 
 SEE ALSO
-    Syntax::Feature::Maybe.
+    Syntax::Feature::Maybe, PerlX::Maybe::XS.
 
     MooseX::UndefTolerant, PerlX::Perform, Exporter.
 
@@ -85,7 +111,7 @@ AUTHOR
     Toby Inkster <tobyink@cpan.org>.
 
 COPYRIGHT AND LICENCE
-    This software is copyright (c) 2012 by Toby Inkster.
+    This software is copyright (c) 2012-2013 by Toby Inkster.
 
     This is free software; you can redistribute it and/or modify it under
     the same terms as the Perl 5 programming language system itself.

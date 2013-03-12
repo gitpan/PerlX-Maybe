@@ -3,15 +3,29 @@ package PerlX::Maybe;
 use 5.008;
 use strict;
 
-our (@EXPORT, @ISA);
 BEGIN {
 	$PerlX::Maybe::AUTHORITY = 'cpan:TOBYINK';
-	$PerlX::Maybe::VERSION   = '0.002';
+	$PerlX::Maybe::VERSION   = '0.003';
 	
 	require Exporter;
-	@ISA       = qw/Exporter/;
-	@EXPORT    = qw/maybe/;
+	our @ISA         = qw/ Exporter /;
+	our @EXPORT      = qw/ maybe /;
+	our @EXPORT_OK   = qw/ maybe provided /;
+	our %EXPORT_TAGS = (all => \@EXPORT_OK, default => \@EXPORT);
 }
+
+unless ($ENV{PERLX_MAYBE_IMPLEMENTATION} =~ /pp/i)
+{
+	eval q{ use PerlX::Maybe::XS 0.003 ':all' };
+}
+
+__PACKAGE__->can('maybe') ? eval <<'END_XS' : eval <<'END_PP';
+
+sub IMPLEMENTATION () { "XS" }
+
+END_XS
+
+sub IMPLEMENTATION () { "PP" }
 
 sub maybe ($$@)
 {
@@ -24,6 +38,20 @@ sub maybe ($$@)
 		(scalar @_ > 1) ? @_[2 .. $#_] : qw()
 	}
 }
+
+sub provided ($$$@)
+{
+	if (shift)
+	{
+		@_
+	}
+	else
+	{
+		(scalar @_ > 1) ? @_[2 .. $#_] : qw()
+	}
+}
+
+END_PP
 
 __FILE__
 __END__
@@ -39,14 +67,14 @@ You once wrote:
  my $bob = Person->new(
     defined $name ? (name => $name) : (),
     defined $age ? (age => $age) : (),
-    );
+ );
 
 Now you can write:
 
  my $bob = Person->new(
     maybe name => $name,
     maybe age  => $age,
-    );
+ );
 
 =head1 DESCRIPTION
 
@@ -57,7 +85,7 @@ arguments like this:
  my $bob = Person->new(
     name => $name,
     age => $age,
-    );
+ );
 
 Will result in the C<name> and C<age> attributes possibly being set to
 undef (if the corresponding C<$name> and C<$age> variables are not defined),
@@ -73,18 +101,22 @@ at all when they are undefined, ugly looking code like this is often used:
  my $bob = Person->new(
     defined $name ? (name => $name) : (),
     defined $age ? (age => $age) : (),
-    );
+ );
 
 or:
 
  my $bob = Person->new(
     (name => $name) x!!(defined $name),
     (age  => $age)  x!!(defined $age),
-    );
+ );
 
-A slightly more elegant solution is the C<maybe> function:
+A slightly more elegant solution is the C<maybe> function.
 
-=head2 C<< maybe $x => $y, @rest >>
+=head2 Functions
+
+=over
+
+=item C<< maybe $x => $y, @rest >>
 
 This function checks that C<< $x >> and C<< $y >> are both defined. If they
 are, it returns them both as a list; otherwise it returns the empty list.
@@ -101,9 +133,40 @@ to "just work".
    maybe phone     => $tel,
    maybe email     => $email,
          unique_id => $id,
-   );
+ );
 
 This function is exported by default.
+
+=item C<< provided $condition, $x => $y, @rest >>
+
+Like C<maybe> but allows you to use a custom condition expression:
+
+ my $bob = Person->new(
+                             name      => $name,
+                             address   => $addr,
+   provided length($tel),    phone     => $tel,
+   provided $email =~ /\@/,  email     => $email,
+                             unique_id => $id,
+ );
+
+This function is not exported by default.
+
+=item C<< PerlX::Maybe::IMPLEMENTATION >>
+
+Indicates whether the XS backend L<PerlX::Maybe::XS> was loaded.
+
+=back
+
+=head2 XS Backend
+
+If you install L<PerlX::Maybe::XS>, a faster XS-based implementation will
+be used instead of the pure Perl functions. My basic benchmarking experiments
+seem to show this to be around 30% faster.
+
+=head2 Environment
+
+The environment variable C<PERLX_MAYBE_IMPLEMENTATION> may be set to
+C<< "PP" >> to prevent the XS backend from loading.
 
 =head1 BUGS
 
@@ -112,7 +175,7 @@ L<http://rt.cpan.org/Dist/Display.html?Queue=PerlX-Maybe>.
 
 =head1 SEE ALSO
 
-L<Syntax::Feature::Maybe>.
+L<Syntax::Feature::Maybe>, L<PerlX::Maybe::XS>.
 
 L<MooseX::UndefTolerant>, L<PerlX::Perform>, L<Exporter>.
 
@@ -122,7 +185,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENCE
 
-This software is copyright (c) 2012 by Toby Inkster.
+This software is copyright (c) 2012-2013 by Toby Inkster.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

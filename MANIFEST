@@ -1,4 +1,5 @@
 Changes
+COPYRIGHT
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -16,7 +17,8 @@ inc/Module/Install/WriteAll.pm
 inc/Module/Package.pm
 inc/Module/Package/Dist/RDF.pm
 inc/Scalar/Util.pm
-inc/Scalar/Util/PP.pm
+inc/unicore/Name.pm
+inc/utf8.pm
 inc/YAML/Tiny.pm
 lib/PerlX/Maybe.pm
 lib/Syntax/Feature/Maybe.pm
@@ -30,4 +32,5 @@ meta/makefile.ttl
 README
 t/01basic.t
 t/02maybe.t
+t/03provided.t
 SIGNATURE                                Public-key signature (added by MakeMaker)
