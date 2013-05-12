@@ -14,11 +14,13 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 7a149483ca0f4586fa7b3ede6c469b369632f896 COPYRIGHT
-SHA1 7069ab6c9a0d358e4f15640d211c5a0af49018a3 Changes
+SHA1 766a7d1a936b4ff91e7fa37d29bb325d8f2618b7 COPYRIGHT
+SHA1 235e761ee465c59ed7b5b591dac93795ec84a4eb CREDITS
+SHA1 1b9d14cb926c960066319c1089b2107c81107533 Changes
 SHA1 937d452c5c4069f4cda9ffaf45a33f1eb5f060e8 LICENSE
-SHA1 78b48f0c8c580a3616ed6ea1ea9f4a12104e3a7c MANIFEST
-SHA1 9da5cbcdbab9b158d2993df96b4a15dfef4793ed META.yml
+SHA1 c340974d87afb10832c7ff635faa4c5296ef3439 MANIFEST
+SHA1 ce9d7fab53b375c6704142a653fa93e92b56436f META.ttl
+SHA1 5603a8278102b41398a528a95696846b9374ebc3 META.yml
 SHA1 7150e5e086ef493e1e527a1eeec44a8344b80db6 Makefile.PL
 SHA1 783d95cefe95509062c82134622d1abc7c3c7f14 README
 SHA1 06c410f05488c1612ed66b06d3a86b2580581e4a inc/Module/AutoInstall.pm
@@ -27,23 +29,21 @@ SHA1 61ab1dd37e33ddbe155907ce51df8a3e56ac8bbf inc/Module/Install/AutoInstall.pm
 SHA1 c04f94f91fa97b9f8cfb5a36071098ab0e6c78e3 inc/Module/Install/AutoManifest.pm
 SHA1 2d0fad3bf255f8c1e7e1e34eafccc4f595603ddc inc/Module/Install/Base.pm
 SHA1 f0e01fff7d73cd145fbf22331579918d4628ddb0 inc/Module/Install/Can.pm
+SHA1 9e4cc10c7f138a3f2c60d9ee1f34261f0d8c5aae inc/Module/Install/Contributors.pm
 SHA1 7328966e4fda0c8451a6d3850704da0b84ac1540 inc/Module/Install/Fetch.pm
 SHA1 66d3d335a03492583a3be121a7d888f63f08412c inc/Module/Install/Include.pm
 SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
 SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
 SHA1 3b9281ddf7dd6d6f5de0a9642c69333023193c80 inc/Module/Install/Package.pm
-SHA1 9de7b5129351499c048328dfa718d0eab557cf30 inc/Module/Install/TrustMetaYml.pm
+SHA1 41f76ff6b39368a65da86377e43b34bacc2fb0eb inc/Module/Install/TrustMetaYml.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
 SHA1 26d58a041cd6b3d21db98b32e8fd1841aae21204 inc/Module/Package.pm
-SHA1 75cef05fcd2d6001c483ab17b81d2c62505eeabf inc/Module/Package/Dist/RDF.pm
-SHA1 0e0eed2e69d9583081868cf4f220068d0a018568 inc/Scalar/Util.pm
+SHA1 5a2f84a7a82eee0d1e5ed3628fe503a608efc10f inc/Module/Package/Dist/RDF.pm
 SHA1 feb933cefe2e3762e8322bd6071a2499f3440da1 inc/YAML/Tiny.pm
-SHA1 8105c0510a773b56840995fb4dd2dc64fe9ddaee inc/unicore/Name.pm
-SHA1 36df501c7c9b73c282c5174ed54d8283b2f2cbf2 inc/utf8.pm
-SHA1 18298f2c44cb2d54068903fef82fb52719e6b2be lib/PerlX/Maybe.pm
-SHA1 e0d8d4d62f3b7a38d813575d8d09e98c129a6374 lib/Syntax/Feature/Maybe.pm
-SHA1 2f16b5e0de2cbbc0b292e52c599bcdc355fa521b meta/changes.ttl
+SHA1 ce64916034e3756bf3b9149d588c6f2be7020f7a lib/PerlX/Maybe.pm
+SHA1 304751609aa9be980d02d4092c57414015a8b796 lib/Syntax/Feature/Maybe.pm
+SHA1 a20631f85b7ec683407fd83f9cef81cd0f5daf6a meta/changes.ttl
 SHA1 4615287be6141b45a1f5466d1316f0ee77f89fd0 meta/doap.ttl
 SHA1 21b1360a6a156c4deafd2eab8a4e8b686af8b310 meta/makefile.ttl
 SHA1 0eda281cd41c7bfa28293ff92f8599deb2f9e288 t/01basic.t
@@ -52,7 +52,7 @@ SHA1 6c70be36ace5761b63e5c940d408145101079c38 t/03provided.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.11 (GNU/Linux)
 
-iEYEARECAAYFAlE/M9MACgkQzr+BKGoqfTlwQACgn5ZOvmAQE1tcosI4Fc8tOEwu
-kOMAn07pKuJY7Ss697xI2spRAypfYKHA
-=eSG8
+iEYEARECAAYFAlGP2NYACgkQzr+BKGoqfTkgKwCghucZoawIkqJ4A0/6BIz2plTx
+rCgAoKDEiOMX+GulfA1W7ltLWVd/AKPi
+=LgKI
 -----END PGP SIGNATURE-----

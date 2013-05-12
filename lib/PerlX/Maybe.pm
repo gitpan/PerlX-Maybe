@@ -5,7 +5,7 @@ use strict;
 
 BEGIN {
 	$PerlX::Maybe::AUTHORITY = 'cpan:TOBYINK';
-	$PerlX::Maybe::VERSION   = '0.003';
+	$PerlX::Maybe::VERSION   = '0.004';
 	
 	require Exporter;
 	our @ISA         = qw/ Exporter /;
@@ -14,7 +14,7 @@ BEGIN {
 	our %EXPORT_TAGS = (all => \@EXPORT_OK, default => \@EXPORT);
 }
 
-unless ($ENV{PERLX_MAYBE_IMPLEMENTATION} =~ /pp/i)
+unless (($ENV{PERLX_MAYBE_IMPLEMENTATION}||'') =~ /pp/i)
 {
 	eval q{ use PerlX::Maybe::XS 0.003 ':all' };
 }

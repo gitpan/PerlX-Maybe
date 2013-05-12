@@ -3,9 +3,11 @@ Upstream-Name: PerlX-Maybe
 Upstream-Contact: Toby Inkster <tobyink@cpan.org>
 Source: https://metacpan.org/release/PerlX-Maybe
 
-Files: Changes
+Files: CREDITS
+ Changes
  LICENSE
  MANIFEST.SKIP
+ META.ttl
  Makefile.PL
  README
  meta/changes.ttl
@@ -28,14 +30,13 @@ Files: lib/PerlX/Maybe.pm
 Copyright: This software is copyright (c) 2012-2013 by Toby Inkster.
 License: GPL-1.0+ or Artistic-1.0
 
-Files: inc/unicore/Name.pm
- inc/utf8.pm
-Copyright: 1993-2012, Larry Wall and others
-License: GPL-1.0+ or Artistic-1.0
-
 Files: inc/Module/Install/TrustMetaYml.pm
  inc/Module/Package/Dist/RDF.pm
 Copyright: This software is copyright (c) 2011-2012 by Toby Inkster.
+License: GPL-1.0+ or Artistic-1.0
+
+Files: inc/Module/Install/Contributors.pm
+Copyright: This software is copyright (c) 2013 by Toby Inkster.
 License: GPL-1.0+ or Artistic-1.0
 
 Files: inc/Module/Install/Makefile.pm
@@ -53,11 +54,6 @@ License: GPL-1.0+ or Artistic-1.0
 
 Files: inc/Module/Install/Base.pm
 Copyright: Copyright 2003, 2004 by Audrey Tang <autrijus@autrijus.org>.
-License: GPL-1.0+ or Artistic-1.0
-
-Files: inc/Scalar/Util.pm
-Copyright: Copyright (c) 1997-2007 Graham Barr <gbarr@pobox.com>. All rights reserved.
- Copyright (c) 1999 Tuomas J. Lukka <lukka@iki.fi>. All rights reserved.
 License: GPL-1.0+ or Artistic-1.0
 
 Files: inc/YAML/Tiny.pm

@@ -31,4 +31,6 @@ resources:
   homepage: https://metacpan.org/release/PerlX-Maybe
   license: http://dev.perl.org/licenses/
   repository: https://bitbucket.org/tobyink/p5-perlx-maybe
-version: 0.003
+version: 0.004
+x_contributors:
+  - 'Toby Inkster <tobyink@cpan.org>'
