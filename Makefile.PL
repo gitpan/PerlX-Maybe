@@ -1,13 +1,13 @@
 use strict;
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.17;
 
 my $EUMM = 'ExtUtils::MakeMaker'->VERSION;
 
 my $meta = {
   "abstract"           => "return a given list only if they are all defined",
-  "author"             => ["unknown"],
+  "author"             => ["Toby Inkster <tobyink\@cpan.org>"],
   "dynamic_config"     => 0,
-  "generated_by"       => "Dist::Inkt::Profile::TOBYINK version 0.003, CPAN::Meta::Converter version 2.120921",
+  "generated_by"       => "Dist::Inkt::Profile::TOBYINK version 0.004, CPAN::Meta::Converter version 2.120921",
   "keywords"           => [],
   "license"            => ["perl_5"],
   "meta-spec"          => {
@@ -17,16 +17,17 @@ my $meta = {
   "name"               => "PerlX-Maybe",
   "no_index"           => { directory => ["eg", "examples", "inc", "t", "xt"] },
   "prereqs"            => {
-                            configure => { requires => { "ExtUtils::MakeMaker" => 6.31 } },
-                            runtime => {
-                              recommends => { "PerlX::Maybe::XS" => 0 },
-                              requires   => { perl => 5.006 },
-                            },
-                            test => { requires => { "Test::More" => 0.61 } },
+                            configure => { requires => { "ExtUtils::MakeMaker" => 6.17 } },
+                            develop   => { recommends => { "Dist::Inkt" => 0 } },
+                            runtime   => {
+                                           recommends => { "PerlX::Maybe::XS" => 0 },
+                                           requires   => { perl => 5.006 },
+                                         },
+                            test      => { requires => { "Test::More" => 0.61 } },
                           },
   "provides"           => {
-                            "PerlX::Maybe" => { file => "lib/PerlX/Maybe.pm", version => "0.999_01" },
-                            "Syntax::Feature::Maybe" => { file => "lib/Syntax/Feature/Maybe.pm", version => "0.999_01" },
+                            "PerlX::Maybe" => { file => "lib/PerlX/Maybe.pm", version => "0.999_02" },
+                            "Syntax::Feature::Maybe" => { file => "lib/Syntax/Feature/Maybe.pm", version => "0.999_02" },
                           },
   "release_status"     => "testing",
   "resources"          => {
@@ -35,8 +36,7 @@ my $meta = {
                             license    => ["http://dev.perl.org/licenses/"],
                             repository => { type => "git", web => "https://github.com/tobyink/p5-perlx-maybe" },
                           },
-  "version"            => "0.999_01",
-  "x_contributors"     => ["Toby Inkster <tobyink\@cpan.org>"],
+  "version"            => "0.999_02",
   "x_provides_scripts" => {},
 };
 
@@ -46,13 +46,13 @@ my %WriteMakefileArgs = (
 	ABSTRACT           => $meta->{abstract},
 	AUTHOR             => ($EUMM >= 6.5702 ? $meta->{author} : $meta->{author}[0]),
 	DISTNAME           => $meta->{name},
-	DISTVNAME          => sprintf('%s-%s', $meta->{name}, $meta->{version}),
-	EXE_FILES          => [ map $_->{file}, values %{ $meta->{x_provides_scripts} || {} } ],
-	LICENSE            => $meta->{license}[0],
-	NAME               => do { my $n = $meta->{name}; $n =~ s/-/::/g; $n },
 	VERSION            => $meta->{version},
+	EXE_FILES          => [ map $_->{file}, values %{ $meta->{x_provides_scripts} || {} } ],
+	NAME               => do { my $n = $meta->{name}; $n =~ s/-/::/g; $n },
 	%dynamic_config,
 );
+
+$WriteMakefileArgs{LICENSE} => $meta->{license}[0] if $EUMM >= 6.3001;
 
 sub deps
 {
@@ -78,14 +78,14 @@ if ($EUMM >= 6.6303)
 }
 elsif ($EUMM >= 6.5503)
 {
-	$WriteMakefileArgs{BUILD_REQUIRES}     ||= deps('build');
-	$WriteMakefileArgs{CONFIGURE_REQUIRES} ||= deps('configure', 'test');
+	$WriteMakefileArgs{BUILD_REQUIRES}     ||= deps('build', 'test');
+	$WriteMakefileArgs{CONFIGURE_REQUIRES} ||= deps('configure');
 	$WriteMakefileArgs{PREREQ_PM}          ||= deps('runtime');	
 }
 elsif ($EUMM >= 6.52)
 {
-	$WriteMakefileArgs{CONFIGURE_REQUIRES} ||= deps('configure', 'build', 'test');
-	$WriteMakefileArgs{PREREQ_PM}          ||= deps('runtime');	
+	$WriteMakefileArgs{CONFIGURE_REQUIRES} ||= deps('configure');
+	$WriteMakefileArgs{PREREQ_PM}          ||= deps('runtime', 'build', 'test');	
 }
 else
 {

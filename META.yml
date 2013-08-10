@@ -1,13 +1,13 @@
 ---
 abstract: 'return a given list only if they are all defined'
 author:
-  - unknown
+  - 'Toby Inkster <tobyink@cpan.org>'
 build_requires:
   Test::More: 0.61
 configure_requires:
-  ExtUtils::MakeMaker: 6.31
+  ExtUtils::MakeMaker: 6.17
 dynamic_config: 0
-generated_by: 'Dist::Inkt::Profile::TOBYINK version 0.003, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Inkt::Profile::TOBYINK version 0.004, CPAN::Meta::Converter version 2.120921'
 keywords: []
 license: unknown
 meta-spec:
@@ -24,10 +24,10 @@ no_index:
 provides:
   PerlX::Maybe:
     file: lib/PerlX/Maybe.pm
-    version: 0.999_01
+    version: 0.999_02
   Syntax::Feature::Maybe:
     file: lib/Syntax/Feature/Maybe.pm
-    version: 0.999_01
+    version: 0.999_02
 recommends:
   PerlX::Maybe::XS: 0
 requires:
@@ -37,7 +37,5 @@ resources:
   homepage: https://metacpan.org/release/PerlX-Maybe
   license: http://dev.perl.org/licenses/
   repository: https://github.com/tobyink/p5-perlx-maybe
-version: 0.999_01
-x_contributors:
-  - 'Toby Inkster <tobyink@cpan.org>'
+version: 0.999_02
 x_provides_scripts: {}

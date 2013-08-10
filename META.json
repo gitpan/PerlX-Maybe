@@ -1,8 +1,10 @@
 {
    "abstract" : "return a given list only if they are all defined",
-   "author" : [],
+   "author" : [
+      "Toby Inkster <tobyink@cpan.org>"
+   ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Inkt::Profile::TOBYINK version 0.003, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Dist::Inkt::Profile::TOBYINK version 0.004, CPAN::Meta::Converter version 2.120921",
    "keywords" : [],
    "license" : [
       "perl"
@@ -24,7 +26,12 @@
    "prereqs" : {
       "configure" : {
          "requires" : {
-            "ExtUtils::MakeMaker" : "6.31"
+            "ExtUtils::MakeMaker" : "6.17"
+         }
+      },
+      "develop" : {
+         "recommends" : {
+            "Dist::Inkt" : 0
          }
       },
       "runtime" : {
@@ -44,11 +51,11 @@
    "provides" : {
       "PerlX::Maybe" : {
          "file" : "lib/PerlX/Maybe.pm",
-         "version" : "0.999_01"
+         "version" : "0.999_02"
       },
       "Syntax::Feature::Maybe" : {
          "file" : "lib/Syntax/Feature/Maybe.pm",
-         "version" : "0.999_01"
+         "version" : "0.999_02"
       }
    },
    "release_status" : "testing",
@@ -65,9 +72,6 @@
          "web" : "https://github.com/tobyink/p5-perlx-maybe"
       }
    },
-   "version" : "0.999_01",
-   "x_contributors" : [
-      "Toby Inkster <tobyink@cpan.org>"
-   ],
+   "version" : "0.999_02",
    "x_provides_scripts" : {}
 }

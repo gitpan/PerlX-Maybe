@@ -4,6 +4,12 @@ PerlX-Maybe
 Created:      2012-02-15
 Home page:    <https://metacpan.org/release/PerlX-Maybe>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=PerlX-Maybe>
+Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
+
+0.999_02  2013-08-10
+
+ - (Packaging) Add myself as maintainer rather than developer; this should
+   ensure that I don't get listed in 'x_contributors'.
 
 0.999_01  2013-08-10
 
