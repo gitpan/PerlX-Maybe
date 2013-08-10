@@ -1,18 +1,18 @@
 package Syntax::Feature::Maybe;
 
-use 5.008;
+use 5.006;
 use strict;
 use PerlX::Maybe qw//;
 
 BEGIN {
 	$Syntax::Feature::Maybe::AUTHORITY = 'cpan:TOBYINK';
-	$Syntax::Feature::Maybe::VERSION   = '0.004';
+	$Syntax::Feature::Maybe::VERSION   = '0.999_01';
 }
 
 sub install
-{	
+{
 	my ($class, %args) = @_;
-	my $into = delete $args{into};
+	my $into = delete($args{into});
 	
 	foreach my $f (qw/maybe/)
 	{
@@ -23,6 +23,10 @@ sub install
 
 __FILE__
 __END__
+
+=pod
+
+=encoding utf8
 
 =head1 NAME
 

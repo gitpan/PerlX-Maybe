@@ -1,36 +1,43 @@
 ---
 abstract: 'return a given list only if they are all defined'
 author:
-  - 'Toby Inkster <tobyink@cpan.org>'
+  - unknown
 build_requires:
-  ExtUtils::MakeMaker: 6.59
   Test::More: 0.61
 configure_requires:
-  ExtUtils::MakeMaker: 6.59
-distribution_type: module
+  ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Module::Install version 1.06'
+generated_by: 'Dist::Inkt::Profile::TOBYINK version 0.003, CPAN::Meta::Converter version 2.120921'
 keywords: []
-license: perl
+license: unknown
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
-module_name: PerlX::Maybe
 name: PerlX-Maybe
 no_index:
   directory:
+    - eg
+    - examples
     - inc
     - t
     - xt
+provides:
+  PerlX::Maybe:
+    file: lib/PerlX/Maybe.pm
+    version: 0.999_01
+  Syntax::Feature::Maybe:
+    file: lib/Syntax/Feature/Maybe.pm
+    version: 0.999_01
+recommends:
+  PerlX::Maybe::XS: 0
 requires:
-  Exporter: 0
-  perl: 5.8.0
-  strict: 0
+  perl: 5.006
 resources:
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=PerlX-Maybe
   homepage: https://metacpan.org/release/PerlX-Maybe
   license: http://dev.perl.org/licenses/
-  repository: https://bitbucket.org/tobyink/p5-perlx-maybe
-version: 0.004
+  repository: https://github.com/tobyink/p5-perlx-maybe
+version: 0.999_01
 x_contributors:
   - 'Toby Inkster <tobyink@cpan.org>'
+x_provides_scripts: {}

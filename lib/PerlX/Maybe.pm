@@ -1,11 +1,11 @@
 package PerlX::Maybe;
 
-use 5.008;
+use 5.006;
 use strict;
 
 BEGIN {
 	$PerlX::Maybe::AUTHORITY = 'cpan:TOBYINK';
-	$PerlX::Maybe::VERSION   = '0.004';
+	$PerlX::Maybe::VERSION   = '0.999_01';
 	
 	require Exporter;
 	our @ISA         = qw/ Exporter /;
@@ -55,6 +55,12 @@ END_PP
 
 __FILE__
 __END__
+
+=pod
+
+=encoding utf8
+
+=for stopwords benchmarking
 
 =head1 NAME
 

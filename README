@@ -18,25 +18,24 @@ SYNOPSIS
 
 DESCRIPTION
     Moose classes (and some other classes) distinguish between an attribute
-    being unset and the attribute being set to undef. Supplying a
-    constructor arguments like this:
+    being unset and the attribute being set to undef. Supplying a constructor
+    arguments like this:
 
      my $bob = Person->new(
         name => $name,
         age => $age,
      );
 
-    Will result in the "name" and "age" attributes possibly being set to
-    undef (if the corresponding $name and $age variables are not defined),
-    which may violate the Person class' type constraints.
+    Will result in the `name` and `age` attributes possibly being set to undef
+    (if the corresponding $name and $age variables are not defined), which may
+    violate the Person class' type constraints.
 
     (Note: if you are the *author* of the class in question, you can solve
     this using MooseX::UndefTolerant. However, some of us are stuck using
     non-UndefTolerant classes written by third parties.)
 
-    To ensure that the Person constructor does not try to set a name or age
-    at all when they are undefined, ugly looking code like this is often
-    used:
+    To ensure that the Person constructor does not try to set a name or age at
+    all when they are undefined, ugly looking code like this is often used:
 
      my $bob = Person->new(
         defined $name ? (name => $name) : (),
@@ -50,12 +49,12 @@ DESCRIPTION
         (age  => $age)  x!!(defined $age),
      );
 
-    A slightly more elegant solution is the "maybe" function.
+    A slightly more elegant solution is the `maybe` function.
 
   Functions
-    "maybe $x => $y, @rest"
-        This function checks that $x and $y are both defined. If they are,
-        it returns them both as a list; otherwise it returns the empty list.
+    `maybe $x => $y, @rest`
+        This function checks that $x and $y are both defined. If they are, it
+        returns them both as a list; otherwise it returns the empty list.
 
         If @rest is provided, it is unconditionally appended to the end of
         whatever list is returned.
@@ -73,8 +72,8 @@ DESCRIPTION
 
         This function is exported by default.
 
-    "provided $condition, $x => $y, @rest"
-        Like "maybe" but allows you to use a custom condition expression:
+    `provided $condition, $x => $y, @rest`
+        Like `maybe` but allows you to use a custom condition expression:
 
          my $bob = Person->new(
                                      name      => $name,
@@ -86,16 +85,16 @@ DESCRIPTION
 
         This function is not exported by default.
 
-    "PerlX::Maybe::IMPLEMENTATION"
+    `PerlX::Maybe::IMPLEMENTATION`
         Indicates whether the XS backend PerlX::Maybe::XS was loaded.
 
   XS Backend
-    If you install PerlX::Maybe::XS, a faster XS-based implementation will
-    be used instead of the pure Perl functions. My basic benchmarking
-    experiments seem to show this to be around 30% faster.
+    If you install PerlX::Maybe::XS, a faster XS-based implementation will be
+    used instead of the pure Perl functions. My basic benchmarking experiments
+    seem to show this to be around 30% faster.
 
   Environment
-    The environment variable "PERLX_MAYBE_IMPLEMENTATION" may be set to "PP"
+    The environment variable `PERLX_MAYBE_IMPLEMENTATION` may be set to "PP"
     to prevent the XS backend from loading.
 
 BUGS
@@ -113,8 +112,8 @@ AUTHOR
 COPYRIGHT AND LICENCE
     This software is copyright (c) 2012-2013 by Toby Inkster.
 
-    This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+    This is free software; you can redistribute it and/or modify it under the
+    same terms as the Perl 5 programming language system itself.
 
 DISCLAIMER OF WARRANTIES
     THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
