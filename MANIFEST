@@ -5,12 +5,12 @@ Changes
 LICENSE
 MANIFEST
 META.json
-META.ttl
 META.yml
 Makefile.PL
 README
 SIGNATURE
 dist.ini
+doap.ttl
 lib/PerlX/Maybe.pm
 lib/Syntax/Feature/Maybe.pm
 t/01basic.t

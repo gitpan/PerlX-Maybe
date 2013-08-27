@@ -24,12 +24,12 @@
 	doap:maintainer      <http://purl.org/NET/cpan-uri/person/tobyink>;
 	doap:name            "PerlX-Maybe";
 	doap:programming-language "Perl";
-	doap:release         <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-001>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-002>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-003>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-004>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-999_01>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-999_02>;
+	doap:release         <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-001>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-002>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-003>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-004>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-999_01>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-999_02>, <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_1-000>;
 	doap:repository      [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-perlx-maybe>;
 	];
-	doap:shortdesc       "return a given list only if they are all defined".
+	doap:shortdesc       "return a pair only if they are both defined".
 
 <http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_0-001>
 	a                    doap:Version;
@@ -106,6 +106,13 @@
 	];
 	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/PerlX-Maybe-0.999_02.tar.gz>;
 	doap:revision        "0.999_02"^^xsd:string.
+
+<http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/v_1-000>
+	a                    doap:Version;
+	dc:issued            "2013-08-27"^^xsd:date;
+	doap:file-release    <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/PerlX-Maybe-1.000.tar.gz>;
+	doap:revision        "1.000"^^xsd:string;
+	rdfs:comment         "No functional changes.".
 
 <http://purl.org/NET/cpan-uri/person/tobyink>
 	a                    foaf:Person;
