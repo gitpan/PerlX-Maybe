@@ -3,16 +3,16 @@ abstract: 'return a pair only if they are both defined'
 author:
   - 'Toby Inkster (TOBYINK) <tobyink@cpan.org>'
 build_requires:
-  Test::More: 0.61
+  Test::More: '0.61'
 configure_requires:
-  ExtUtils::MakeMaker: 6.17
+  ExtUtils::MakeMaker: '6.17'
 dynamic_config: 0
-generated_by: 'Dist::Inkt::Profile::TOBYINK version 0.007, CPAN::Meta::Converter version 2.120921'
+generated_by: 'Dist::Inkt::Profile::TOBYINK version 0.023, CPAN::Meta::Converter version 2.140640'
 keywords: []
-license: unknown
+license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
-  version: 1.4
+  version: '1.4'
 name: PerlX-Maybe
 no_index:
   directory:
@@ -21,22 +21,22 @@ no_index:
     - inc
     - t
     - xt
+optional_features: {}
 provides:
   PerlX::Maybe:
     file: lib/PerlX/Maybe.pm
-    version: 1.000
+    version: '1.001'
   Syntax::Feature::Maybe:
     file: lib/Syntax/Feature/Maybe.pm
-    version: 1.000
+    version: '1.001'
 recommends:
-  PerlX::Maybe::XS: 0
+  PerlX::Maybe::XS: '0'
 requires:
-  perl: 5.006
+  perl: '5.006'
 resources:
-  X_identifier: http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/project
+  Identifier: http://purl.org/NET/cpan-uri/dist/PerlX-Maybe/project
   bugtracker: http://rt.cpan.org/Dist/Display.html?Queue=PerlX-Maybe
   homepage: https://metacpan.org/release/PerlX-Maybe
   license: http://dev.perl.org/licenses/
-  repository: https://github.com/tobyink/p5-perlx-maybe
-version: 1.000
-x_provides_scripts: {}
+  repository: git://github.com/tobyink/p5-perlx-maybe.git
+version: '1.001'
